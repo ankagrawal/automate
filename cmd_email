@@ -1,5 +1,4 @@
-$1
 status=$?
 echo "Subject: Command Complete\n The command $1 completed with status $status" > temp_email_file
-sendmail $2 < temp_email_file
+$1 | sendmail $2 < temp_email_file
 rm -f temp_email_file
